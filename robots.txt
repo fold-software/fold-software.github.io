@@ -1,3 +1,4 @@
 User-agent: *
 Disallow: /404.html
 Allow: /
+sitemap: https://fold.com.br/sitemap.xml
