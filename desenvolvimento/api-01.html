@@ -1,0 +1,118 @@
+<!DOCTYPE html><html lang="pt"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@fold_software"><meta property="og:site_name" content="Fold"><meta property="og:locale" content="pt_BR"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="627"><meta property="fb:app_id" content="3200466463356142"><script src="/js/umbrella.js"></script><link rel="alternate" type="application/rss+xml" title="RSS Feed Fold" href="/rss.xml"><script type="application/ld+json">{
+  "@id": "https://fold.com.br/#website",
+  "@context": "http://schema.org",
+  "@type": "WebSite",
+  "name": "Fold",
+  "url": "https://fold.com.br"
+}</script><script type="application/ld+json">{
+  "@id": "https://fold.com.br/#organization",
+  "@context":"http://schema.org",
+  "@type":"Organization",
+  "name": "Fold",
+  "url": "https://fold.com.br",
+  "logo": {
+      "@type": "ImageObject",
+      "url": "https://fold.com.br/img/logo-512.jpg",
+      "width":"512",
+      "height":"512"
+  },
+  "sameAs": ["https://twitter.com/fold_software", "https://www.facebook.com/fold.software/"]
+}</script><script type="application/ld+json">{
+  "@id": "https://fold.com.br/#author",
+  "@context":"http://schema.org",
+  "@type":"Person",
+  "name": "Ygor de Paula",
+  "url": "https://fold.com.br"
+}</script><link rel="canonical" href="https://fold.com.br/desenvolvimento/api-01.html"><title>Fold | Desenvolvimento | APIs: A internet dos robôs</title><meta name="description" content="Você sabe o que é uma API? Sabe como todos os sites que você acessa conversam uns com os outros? APIs ou Application Programming Interfaces são essenciais para os serviços que você usa todos os dias, saiba mais sobre essa tecnologia escondida."><meta name="theme-color" content="#A51313"><meta property="og:type" content="article"><meta property="article:published_time" content="2020-08-19"><meta property="article:section" content="Desenvolvimento"><meta property="article:author" content="https://fold.com.br/sobre.html"><meta property="og:title" content="Fold | APIs: A internet dos robôs"><meta property="og:description" content="Você sabe o que é uma API? Sabe como todos os sites que você acessa conversam uns com os outros? APIs ou Application Programming Interfaces são essenciais para os serviços que você usa todos os dias, saiba mais sobre essa tecnologia escondida."><meta property="og:url" content="https://fold.com.br/desenvolvimento/api-01.html"><meta property="og:image" content="https://fold.com.br/desenvolvimento/assets/api-oi_open-graph.jpg"><link rel="stylesheet" href="/css/post.css"><script src="/js/post.js" defer></script><link rel="stylesheet" href="/css/highlight_gruvbox-dark.css"><script src="/js/highlight.js"></script><script type="application/ld+json">{
+    "@context":"http://schema.org",
+    "@type": "BlogPosting",     "image": "https://fold.com.br/desenvolvimento/assets/api-oi_thumbnail-fullsize.jpg",     "url": "https://fold.com.br/desenvolvimento/assets/api-oi_thumbnail-fullsize.jpg",     "headline": "APIs: A internet dos robôs",     "datePublished": "2020-08-20T00:00:00.000Z",    "inLanguage": "pt-BR",
+    "isFamilyFriendly": "true",
+    "copyrightYear": "2020",
+    "copyrightHolder": { "@id": "https://fold.com.br/#organization" },
+    "author": { "@id": "https://fold.com.br/#author" },
+    "publisher": { "@id": "https://fold.com.br/#organization" },
+    "mainEntityOfPage": "True",     "articleSection": "Desenvolvimento",     "articleBody": "Você já acessou um site e viu nele vários botões de compartilhamento com números que indicam a quantidade de vezes que ele foi compartilhado? Ou viu uma página que incluia um mapa do Google? Esses são exemplos do uso de APIs para incluir serviços de outras empresas em suas páginas.
+APIs ou Application Programing Interfaces, interface de programação de aplicativo em português, são maneiras de comunicação programática entre dois softwares, normalmente via web. As APIs foram essenciais para a evolução da internet e a criação da internet 2.0 e a ideia de Softwares como serviço, e ainda são a base da internet das coisas
+Mas e o que é uma API?
+Uma API é uma interface, ou seja um combinado entre dois programas sobre como se comunicar. Uma API pode ser implementada de diversas maneiras, requisições HTTP, bibliotecas pré-compiladas, entre outros. 
+
+A maior vantagem de uma API é a possibilidade de reutilização de serviços grandes e compartilhamento de informações sem que seja nescessário o conhecimento do funcionamento interno do serviço que mantem esses dados.
+Como posso usar uma API?
+APIs são absolutamente nescessárias para o desenvolvimento de uma aplicação do mundo real. Existem milhares de APIs por ai a vantagem é que você não precisa conhecer e nem sequer saber usar todas elas, mas é uma boa se familiarizar com as mais comumente utilizadas.
+O conhecimento de como algumas APIs funcionam também te ajuda a estruturar sua própria API caso isso seja algo que esteja fazendo. O planejamento e implementação de uma API é algo comum à vida de desenvolvedor.
+Tipos de API
+APIs existem para diversos serviços e portanto são implementadas de diversas maneiras. As quatro principais arquiteturas atualmente utilizadas para distribuição de APIs públicas são REST, SOAP, GraphQL e SDKs*.
+REST
+Uma arquitetura de API relativamente antiga, criada em 2000, mas ainda muito utilizada, a arquitetura REST, ou *REpresentational State Transfer* é em principio um conjunto de seis "regras". Para que uma API seja RESTfull ela deve ser:
+
+Uniforme em relação à Interface
+Cliente-Servidor
+Sem Estado
+Cacheável
+Em camadas
+Opcionalmente, gerar código por demanda
+
+Normalmente uma Web API em REST utiliza os verbos HTTP (GET, POST, PUT, PATCH, DELETE) à seu favor mas a arquitetura não o obriga a utilização dessa técnica.
+SOAP
+A primeira arquitetura de APIs amplamente utilizada *Simple Object Access Protocol* ou SOAP é protocolo bem definido e estruturado para troca de mensagens entre aplicações via Web. O protocolo SOAP é rigido quanto a sua implementação e utilização, retirando várias escolhas do programador.
+SOAP usa o formato XML para transferência de mensagens, e por esse motivo possui mensagens muito verboas. O protocolo não foi abandonado mas é muito pouco utilizado no dia a dia.
+Graph-QL
+A novata do grupo, a arquitetura GraphQL surgiu com o objetivo de fornecer uma linguagem de consultas para APIs, ela se baseia fortemente no formato JSON e está começando a ser utilizada por ai.
+Apesar de recente, inovadora e prometer mil maravilhas a arquitetura ainda não encontrou muita utilização pública, isso não significa que não tenha atraido algumas randes empresas, apenas não espere encontrar esse tipo de API em todos os cantos.
+SDKs e Bibliotecas
+Finalmente, e de maneira controversa, a ideia de criar uma biblioteca que age como API não é uma ideia nova, mas e um formato que é bastante utilizado pelas APIs mais comums. Muitos não consideram a ideia de uma SDK ou biblioteca como API, por isso a controversia, mas para a maioria dos propósitos uma API pode ser implementada como uma biblioteca.
+TL;DR
+
+APIs são interfaces para comunicação entre códigos
+APIs foram essenciais para evolução da internet
+APIs permitem a ideia de software como serviço
+APIs podem ser implementadas de diversas maneiras
+
+Por enquanto é só, teremos mais sobre APIs no futuro, mas até lá.
+
+Happy Coding
+;D
+
+"}</script></head><body><header><div class="img"><img src="/desenvolvimento/assets/api-oi_thumbnail-fullsize.jpg" alt="Cabos de Internet conectados a um switch."><div class="border" style="background-color:#A51313"></div></div><div class="meta"><div class="post"><a href="#back" rel="nofollow">< Voltar</a><h1>APIs: A internet dos robôs</h1><div class="date">19 de Ago de 2020</div></div><div class="category" style="color:#A51313"><img src="/img/logo-red.svg" alt="Fold - Desenvolvimento"><div class="content" style="color:#A51313"><h2>Fold<span>Desenvolvimento</span></h2><h3>Keep it functional</h3></div></div></div></header><main><article><html><head></head><body><p>Voc&#xEA; j&#xE1; acessou um site e viu nele v&#xE1;rios bot&#xF5;es de compartilhamento com n&#xFA;meros que indicam a quantidade de vezes que ele foi compartilhado? Ou viu uma p&#xE1;gina que incluia um mapa do Google? Esses s&#xE3;o exemplos do uso de APIs para incluir servi&#xE7;os de outras empresas em suas p&#xE1;ginas.</p>
+<p>APIs ou <em>Application Programing Interfaces</em>, interface de programa&#xE7;&#xE3;o de aplicativo em portugu&#xEA;s, s&#xE3;o maneiras de comunica&#xE7;&#xE3;o program&#xE1;tica entre dois softwares, normalmente via web. As APIs foram essenciais para a evolu&#xE7;&#xE3;o da internet e a cria&#xE7;&#xE3;o da internet 2.0 e a ideia de Softwares como servi&#xE7;o, e ainda s&#xE3;o a base da internet das coisas</p>
+<h1 id="mas-e-o-que-&#xE9;-uma-api">Mas e o que &#xE9; uma API?</h1>
+<p>Uma API &#xE9; uma interface, ou seja um combinado entre dois programas sobre como se comunicar. Uma API pode ser implementada de diversas maneiras, requisi&#xE7;&#xF5;es HTTP, bibliotecas pr&#xE9;-compiladas, entre outros. </p>
+<p><img src="/desenvolvimento/assets/api-oi_diagrama-api.jpg" alt="Diagrama do Funcionamento de APIs"></p>
+<p>A maior vantagem de uma API &#xE9; a possibilidade de reutiliza&#xE7;&#xE3;o de servi&#xE7;os grandes e compartilhamento de informa&#xE7;&#xF5;es sem que seja nescess&#xE1;rio o conhecimento do funcionamento interno do servi&#xE7;o que mantem esses dados.</p>
+<h1 id="como-posso-usar-uma-api">Como posso usar uma API?</h1>
+<p>APIs s&#xE3;o absolutamente nescess&#xE1;rias para o desenvolvimento de uma aplica&#xE7;&#xE3;o do mundo real. Existem milhares de APIs por ai a vantagem &#xE9; que voc&#xEA; n&#xE3;o precisa conhecer e nem sequer saber usar todas elas, mas &#xE9; uma boa se familiarizar com as mais comumente utilizadas.</p>
+<p>O conhecimento de como algumas APIs funcionam tamb&#xE9;m te ajuda a estruturar sua pr&#xF3;pria API caso isso seja algo que esteja fazendo. O planejamento e implementa&#xE7;&#xE3;o de uma API &#xE9; algo comum &#xE0; vida de desenvolvedor.</p>
+<h1 id="tipos-de-api">Tipos de API</h1>
+<p>APIs existem para diversos servi&#xE7;os e portanto s&#xE3;o implementadas de diversas maneiras. As quatro principais arquiteturas atualmente utilizadas para distribui&#xE7;&#xE3;o de APIs p&#xFA;blicas s&#xE3;o REST, SOAP, GraphQL e SDKs*.</p>
+<h2 id="rest">REST</h2>
+<p>Uma arquitetura de API relativamente antiga, criada em 2000, mas ainda muito utilizada, a arquitetura REST, ou <strong>*RE</strong>presentational <strong>S</strong>tate <strong>T</strong>ransfer* &#xE9; em principio um conjunto de seis &quot;regras&quot;. Para que uma API seja <em>RESTfull</em> ela deve ser:</p>
+<ol>
+<li>Uniforme em rela&#xE7;&#xE3;o &#xE0; Interface</li>
+<li>Cliente-Servidor</li>
+<li>Sem Estado</li>
+<li>Cache&#xE1;vel</li>
+<li>Em camadas</li>
+<li>Opcionalmente, gerar c&#xF3;digo por demanda</li>
+</ol>
+<p>Normalmente uma Web API em REST utiliza os verbos HTTP (GET, POST, PUT, PATCH, DELETE) &#xE0; seu favor mas a arquitetura n&#xE3;o o obriga a utiliza&#xE7;&#xE3;o dessa t&#xE9;cnica.</p>
+<h2 id="soap">SOAP</h2>
+<p>A primeira arquitetura de APIs amplamente utilizada <strong>*S</strong>imple <strong>O</strong>bject <strong>A</strong>ccess <strong>P</strong>rotocol* ou SOAP &#xE9; protocolo bem definido e estruturado para troca de mensagens entre aplica&#xE7;&#xF5;es via Web. O protocolo SOAP &#xE9; rigido quanto a sua implementa&#xE7;&#xE3;o e utiliza&#xE7;&#xE3;o, retirando v&#xE1;rias escolhas do programador.</p>
+<p>SOAP usa o formato XML para transfer&#xEA;ncia de mensagens, e por esse motivo possui mensagens muito verboas. O protocolo n&#xE3;o foi abandonado mas &#xE9; muito pouco utilizado no dia a dia.</p>
+<h2 id="graph-ql">Graph-QL</h2>
+<p>A novata do grupo, a arquitetura GraphQL surgiu com o objetivo de fornecer uma linguagem de consultas para APIs, ela se baseia fortemente no formato JSON e est&#xE1; come&#xE7;ando a ser utilizada por ai.</p>
+<p>Apesar de recente, inovadora e prometer mil maravilhas a arquitetura ainda n&#xE3;o encontrou muita utiliza&#xE7;&#xE3;o p&#xFA;blica, isso n&#xE3;o significa que n&#xE3;o tenha atraido algumas randes empresas, apenas n&#xE3;o espere encontrar esse tipo de API em todos os cantos.</p>
+<h2 id="sdks-e-bibliotecas">SDKs e Bibliotecas</h2>
+<p>Finalmente, e de maneira controversa, a ideia de criar uma biblioteca que age como API n&#xE3;o &#xE9; uma ideia nova, mas e um formato que &#xE9; bastante utilizado pelas APIs mais comums. Muitos n&#xE3;o consideram a ideia de uma SDK ou biblioteca como API, por isso a controversia, mas para a maioria dos prop&#xF3;sitos uma API pode ser implementada como uma biblioteca.</p>
+<h1 id="tldr">TL;DR</h1>
+<ul>
+<li>APIs s&#xE3;o interfaces para comunica&#xE7;&#xE3;o entre c&#xF3;digos</li>
+<li>APIs foram essenciais para evolu&#xE7;&#xE3;o da internet</li>
+<li>APIs permitem a ideia de software como servi&#xE7;o</li>
+<li>APIs podem ser implementadas de diversas maneiras</li>
+</ul>
+<p>Por enquanto &#xE9; s&#xF3;, teremos mais sobre APIs no futuro, mas at&#xE9; l&#xE1;.</p>
+<blockquote>
+<p><em>Happy Coding</em>
+;D</p>
+</blockquote>
+</body></html></article></main><aside><a class="twitter" href="http://twitter.com/share?url=https%3A%2F%2Ffold.com.br%2Fdesenvolvimento%2Fapi-01.html" target="_blank"><img src="/img/social-tw.svg" alt="Twitter"></a><a class="facebook" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Ffold.com.br%2Fdesenvolvimento%2Fapi-01.html" target="_blank"><img src="/img/social-fb.svg" alt="Facebook"></a><a class="whatsapp" href="https://wa.me/?text=https%3A%2F%2Ffold.com.br%2Fdesenvolvimento%2Fapi-01.html" target="_blank"><img src="/img/social-wp.svg" alt="WhatsApp"></a></aside><div id="progress"></div><script>hljs.initHighlightingOnLoad();</script></body></html>
