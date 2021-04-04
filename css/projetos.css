@@ -313,6 +313,20 @@ main {
     grid-area: long;
 }
 
+#projects li .long a {
+    text-decoration: underline;
+    color: #3E1B55;
+
+    font-family: 'Dosis' sans-serif;
+    font-weight: bold;
+}
+
+#projects li .long a:hover {
+    background-color: #3E1B55;
+    color: white;
+}
+
+
 footer {
     display: flex;
     justify-content: space-between;
