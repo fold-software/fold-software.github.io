@@ -1,0 +1,345 @@
+::selection {
+    background: #3E1B55;
+    color: white;
+}
+
+#hero ::selection, textarea::selection {
+    background: white;
+    color: #3E1B55;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100vw;
+    padding: 0.2rem max(1.5rem, 10vw);
+
+    transition: background;
+}
+
+header::after, header::before {
+    content: "";
+    position: absolute;
+
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+}
+
+header::after {
+    top: 0;
+    height: 95%;
+    
+    background: white;
+}
+header::before {
+    bottom: 0;
+    height: 25%;
+    
+    background: radial-gradient(rgba(0, 0, 0, 0.25), transparent 85%);
+}
+
+header img {
+    height: 2rem;
+}
+
+header li {
+    display: inline;
+    list-style: none;
+    margin-right: 1em;
+    
+    font-size: 0.9rem;
+    font-family: 'Jost', sans-serif;
+}
+
+header li a {
+    text-decoration: none;
+    color: #261E3E;
+    font-weight: 700;
+
+    position: relative;
+    transition: color 250ms ease-in-out;
+}
+
+header li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0.1rem;
+    left: 0;
+    z-index: -1;
+
+    width: 100%;
+    height: 0.1em;
+    border-radius: 999px;
+
+    background-color: #261E3E;
+
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 250ms ease-in-out, background 250ms ease-in-out;
+}
+
+header li a:focus,
+header li a:hover {
+    color: #3E1B55;
+    text-shadow: -1px 1px white, 0 1px white, 1px 1px white;
+
+    outline-offset: 0.2em;
+    outline-color: #3E1B55;
+}
+
+header li a:focus::after,
+header li a:hover::after {
+    background-color: #3E1B55;
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+header li a.atual {
+    font-weight: 900;
+}
+
+main {
+    background: linear-gradient(to bottom, #FBFBFF 0%, #FFFFFF 50%);
+    padding-bottom: 5rem;
+}
+
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: url('../img/projetos-hero-bg.svg');
+    background-size: 100% 100%;
+
+    height: 50vh;
+    padding-top: 2rem;
+    padding-bottom: 10vh;
+}
+
+@media (max-width: 960px) {
+    #hero {
+        background-size: auto 100%;
+        background-position: center bottom;
+    }
+}
+
+#hero h1 {
+    display: flex;
+    align-items: center;
+    
+    margin: 0;
+
+    font-family: 'Jost', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.3rem, 5vw, 3rem);
+    letter-spacing: 0.07em;
+    color: #FBFBFF;    
+    text-transform: uppercase;
+}
+
+#hero h1 img {
+    height: clamp(7rem, 20vw, 12rem);
+    margin-right: 0.5rem;
+    width: auto;
+}
+
+@media (max-width: 600px) {
+    #hero h1 {
+        flex-direction: column;
+    }
+}
+
+#projects {
+    margin-top: 5rem;
+    padding: 0 max(1.5rem, 10vw);
+    
+    font-family: 'Jost', sans-serif;
+    font-size: clamp(0.8rem, 1vw, 1.25rem);
+    color: #3E1B55;
+}
+
+#projects nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#projects nav a, #projects > a {
+    flex: 0 0 auto;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0.5rem;
+    color: #3E1B55;
+    text-decoration: none;
+}
+
+#projects nav a img, #projects > a img {
+    margin: 0 0.5rem
+}
+
+#projects nav a:first-of-type img{
+    transform: rotate(180deg);
+}
+
+#projects > a {
+    justify-content: center;
+}
+#projects > a img {
+    transform: rotate(-90deg);
+}
+
+#projects ul {
+    list-style: none;
+    display: flex;
+    overflow: hidden;
+    padding: 0;
+
+    width: 100%;
+    background-color: #FBFBFF;
+    border-radius: 1em;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    font-size: clamp(1rem, 1vw, 1.25rem);
+}
+
+#projects li {
+    flex: 0 0 100%;
+    padding: 1rem 1.5rem 2rem;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto min-content 1fr;
+    grid-template-areas: "title slug" "title showcase" "long long";
+    
+    gap: 1em;
+    transition: transform 250ms ease-in-out;
+}
+
+@media (max-width: 1050px) {
+    #projects ul {
+        box-shadow: none;
+        background-color: transparent;
+        border-radius: 0;
+    }        
+    #projects li {
+        padding: 0;
+
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas: "title" "slug" "showcase" "long";
+    }
+}
+
+#projects li .title {
+    grid-area: title;
+    position: relative;
+}
+
+#projects li .title img {
+    border-radius: 0.5em;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+#projects li .title::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 0.5em;   
+    background: radial-gradient(150% 100% at 0% 0%, transparent, #261E3E);
+}
+
+#projects li .title h2 {
+    position: absolute;
+    bottom: 1em;
+    right: 1em;
+
+    color: white;
+    font-size: 2em;
+    font-family: 'Dosis', sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    max-width: 65%;
+    text-align: right;
+}
+
+#projects li .slug {
+    grid-area: slug;
+}
+
+#projects li .showcase {
+    grid-area: showcase;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+#projects li .showcase .img {
+    flex: 0 0 calc(50% - 0.5em);
+    position: relative;
+    padding-top: 50%;
+    border-radius: 0.5em;
+    overflow: hidden;
+}
+
+#projects li .showcase .img img {
+    position: absolute;
+    top: 0;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#projects li .long {
+    grid-area: long;
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    background: #FBFBFF;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    padding: 0.75rem max(1.5rem, 10vw);
+}
+
+footer #logo {
+    display: flex;
+    align-items: center;
+    font-family: 'Dosis', sans-serif;
+    color: #261E3E;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    font-size: 0.7rem;
+}
+
+footer img {
+    height: 1rem;
+    margin-right: 0.5em;
+}
+
+footer #copy {
+    font-family: 'Jost', sans-serif;
+    color: #261E3E;
+    font-size: 0.5rem;
+}
