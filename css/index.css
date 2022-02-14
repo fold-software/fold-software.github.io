@@ -1,388 +1,94 @@
-::selection {
-    background: white;
-    color: #3E1B55;
-}
-
-header ::selection, #hero ::selection, textarea::selection {
-    background: #3E1B55;
-    color: white;
-}
-
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 1;
-
+body {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    width: 100vw;
-    padding: 0.2rem max(1.5rem, 10vw);
-
-    transition: background;
-}
-
-header::after, header::before {
-    content: "";
-    position: absolute;
-
-    left: 0;
-    z-index: -1;
-    width: 100vw;
-    opacity: 0;
-}
-
-header::after {
-    top: 0;
-    height: 95%;
-    
-    background: white;
-}
-header::before {
-    bottom: 0;
-    height: 25%;
-    
-    background: radial-gradient(rgba(0, 0, 0, 0.25), transparent 85%);
-}
-
-header.shadow::after, header.shadow::before {
-    opacity: 1;
-}
-
-header.shadow::before {
-    transition: opacity 250ms ease-in-out;
-}
-
-header img {
-    height: 2rem;
-}
-
-header li {
-    display: inline;
-    list-style: none;
-    margin-right: 1em;
-    
-    font-size: 0.9rem;
-    font-family: 'Jost', sans-serif;
-}
-
-header li a {
-    text-decoration: none;
-    color: #261E3E;
-    font-weight: 700;
-
-    position: relative;
-    transition: color 250ms ease-in-out;
-}
-
-header li a::after {
-    content: "";
-    position: absolute;
-    bottom: 0.1rem;
-    left: 0;
-    z-index: -1;
-
-    width: 100%;
-    height: 0.1em;
-    border-radius: 999px;
-
-    background-color: #261E3E;
-
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 250ms ease-in-out, background 250ms ease-in-out;
-}
-
-header li a:focus,
-header li a:hover {
-    color: #3E1B55;
-    text-shadow: -1px 1px white, 0 1px white, 1px 1px white;
-
-    outline-offset: 0.2em;
-    outline-color: #3E1B55;
-}
-
-header li a:focus::after,
-header li a:hover::after {
-    background-color: #3E1B55;
-    transform: scaleX(1);
-    transform-origin: left;
-}
-
-header li a.atual {
-    font-weight: 900;
-}
-
-main {
-    background: linear-gradient(to bottom, #3E1B55 0%, #261E3E 50%);
-    padding-bottom: 5rem;
-}
-
-#hero {
-    display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 
-    background: linear-gradient(to bottom, white 5%, transparent 20%), url('../img/home-hero-bg.svg');
-    background-size: 100% 100%;
+    background-color: #F9F8FE;
 
-    height: 110vh;
-    padding-top: 2rem;
-    padding-bottom: 10vh;
+    height: 100vh;
+    width: 100vw;
 }
 
-@media (max-width: 960px) {
-    #hero {
-        background-size: auto 100%;
-        background-position: center bottom;
-    }
-}
+main {
+    background-color: #FFFFFF;
+    width: min(35rem, 90vw);
+    padding: 3rem min(2rem, 5vw) 4.5rem;
+    max-height: 100vh;
+    min-height: 60vh;
+    border-radius: 20px;
 
-#hero h1 {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    
+
+    box-shadow: 0px 2.7px 2px -25px rgba(0, 0, 0, 0.019), 
+        0px 6.1px 5.3px -25px rgba(0, 0, 0, 0.025), 
+        0px 10.7px 10px -25px rgba(0, 0, 0, 0.029), 
+        0px 17.2px 16.7px -25px rgba(0, 0, 0, 0.033), 
+        0px 28.3px 26.9px -25px rgba(0, 0, 0, 0.037), 
+        0px 60px 50px -25px rgba(0, 0, 0, 0.05);
+}
+
+main img {
+    margin-bottom: 3rem;
+    max-width: 25rem;
+}
+
+main nav a {
+    text-decoration: none;
+    color: #22183d;
+    font-family: 'Montserrat', sans-serif;
+
+    display: grid;
+    grid-template-columns: min(5rem, 10vw) 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: "icon title" "icon link";
+    gap: 0.5rem 1.5rem;
+
+    margin: 2.5rem 0;
+
+    width: 17rem;
+
+    transition: color 250ms ease-in-out, transform 100ms ease-in-out;
+}
+
+main nav a svg {
+    grid-area: icon;
+    align-self: center;
+    justify-self: center;
+}
+
+main nav a h1 {
+    grid-area: title;
+    font-size: 1.45rem;
+    font-weight: 600;
     margin: 0;
 
-    font-family: 'Dosis', sans-serif;
-    font-weight: 800;
-    font-size: clamp(5rem, 15vw, 14rem);
-    letter-spacing: 0.07em;
-    color: #3E1B55;    
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    align-self: end;
 }
 
-#hero h1 img {
-    height: clamp(14rem, 20vw, 22rem);
-    width: auto;
+main nav a span {
+    grid-area: link;
+    font-size: 0.8rem;
+    margin: 0;
+
+    align-self: start;
 }
 
-@media (max-width: 640px) {
-    #hero h1 {
-        flex-direction: column;
-    }
+
+main nav a svg path {
+    transition: fill 250ms ease-in-out;
+}
+main nav a:hover svg path {
+    fill: #1f7580;
 }
 
-#hero h2 {
-    font-family: 'Jost', sans-serif;
-    color: #3E1B55;
-    text-transform: uppercase;
-    line-height: 1.15;
-    font-weight: 800;
+main nav a:hover {
+    color: #1f7580;
 }
 
-#hero h2 div:nth-of-type(1) {
-    font-size: clamp(2.5rem, 12.5vw, 7.5rem);
-    letter-spacing: 0.101em;
-}
+main nav a:hover {
+    transform: scale(1.05);
 
-#hero h2 div:nth-of-type(2) {
-    font-size: clamp(1.5rem, 7.5vw, 4.5rem);
-    letter-spacing: -0.01em;
-}
-
-#hero > img {
-    opacity: 0.5;
-    width: 0.9rem;
-
-    margin-top: 1rem;
-
-    transition: opacity 250ms ease-in-out;
-}
-
-#hero > img.hidden {
-    opacity: 0;
-}
-
-#que, #contato, #principios {
-    display: flex;
-    align-items: stretch;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-
-    margin-top: 5rem;
-    padding: 0 max(1.5rem, 10vw);
-    
-    font-family: 'Jost', sans-serif;
-    font-size: clamp(1rem, 1.25vw, 1.75rem);
-    color: white;
-}
-
-#contato, #principios {
-    margin-top: 7.5rem;
-}
-
-#que > img, #contato > img {
-    flex: 0 0 auto;
-
-    min-width: 15rem;
-    min-height: 15rem;
-
-    max-height: 25rem;
-
-    margin-right: 1rem;
-}
-
-@media (min-width: 1050px) {
-    #contato > img {
-        order: 1;
-    }
-}
-
-#que article, #contato article {
-    flex: 0 1 45ch;
-    min-width: min(35ch, 100%);
-}
-
-#que h2, #contato h2, #principios h2 {
-    margin-top: 0;
-    font-size: 3em;
-    letter-spacing: 0.05em;
-    font-family: 'Dosis', sans-serif;
-    font-weight: 900;
-}
-
-@media (max-width: 1050px) {
-    #que h2, #contato h2, #principios h2 {
-        text-align: center;
-    }
-}
-
-#contato form {
-    position: relative;
-    height: 12rem;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
-    border-radius: 0.75em;
-    background: white;
-}
-
-#contato textarea {
-    width: 100%;
-    height: 100%;
-
-    border: none;
-    resize: none;
-    background: transparent;
-
-    padding: 1em;
-    font-size: 1.3rem;
-    font-family: 'Jost', sans-serif;
-    color: #3E1B55;
-
-    transition: color 250ms;
-}
-
-#contato textarea:focus, #contato textarea:hover {
-    color: #261E3E;
-    outline: none;
-}
-
-#contato a {
-    display: flex;
-    align-items: center;
-    position: absolute;
-    
-    bottom: 0.5em;
-    right: 1em;
-    text-decoration: none;
-
-    color: #261E3E;
-    font-family: 'Dosis', sans-serif;
-    font-weight: 900;
-    font-size: 0.9rem;
-    text-transform: uppercase;
-
-    border-radius: 0.5em;
-    padding: 0.5em 0.7em;
-
-    transition: color 250ms ease-in-out, background 250ms ease-in-out, box-shadow 150ms 250ms ease-in-out;
-}
-
-#contato a img {
-    transition: filter 250ms ease-in-out;
-    margin-left: 0.5em;
-}
-
-#contato:focus-within a {
-    color: white;
-    background: #261E3E;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-#contato:focus-within a img {
-    filter: brightness(999%);
-}
-
-#contato a:hover, #contato a:focus {
-    outline: none;
-    filter: brightness(1.25);
-}
-
-#principios h2 {
-    flex: 0 0 100%;
-    text-align: center;
-}
-
-#principios ul {
-    display: flex;
-    justify-content: space-between;
-    list-style: none;
-}
-
-@media (max-width: 800px) {
-    #principios ul {
-        flex-direction: column;
-    }
-}
-
-#principios li + li{
-    margin-left: 2.5rem;
-}
-
-#principios img {
-    height: 15rem;
-    margin: auto;
-}
-
-#principios h3 {
-    font-size: 2em;
-    text-align: center;
-    font-family: 'Dosis', sans-serif;
-    font-weight: 700;
-
-}
-
-footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    background: #FBFBFF;
-    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-    padding: 0.75rem max(1.5rem, 10vw);
-}
-
-footer #logo {
-    display: flex;
-    align-items: center;
-    font-family: 'Dosis', sans-serif;
-    color: #261E3E;
-    font-weight: 800;
-    letter-spacing: 0.07em;
-    font-size: 0.7rem;
-}
-
-footer img {
-    height: 1rem;
-    margin-right: 0.5em;
-}
-
-footer #copy {
-    font-family: 'Jost', sans-serif;
-    color: #261E3E;
-    font-size: 0.5rem;
+    transition: color 250ms ease-in-out, transform 450ms ease-in-out;
 }
